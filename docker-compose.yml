@@ -1,0 +1,15 @@
+services:
+  sheetpilot:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      SHEETPILOT_WEB_DATA_DIR: /app/data_web
+    volumes:
+      - sheetpilot_web_data:/app/data_web
+    restart: unless-stopped
+
+volumes:
+  sheetpilot_web_data:

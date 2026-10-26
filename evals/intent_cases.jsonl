@@ -1,0 +1,10 @@
+{"id":"lookup_exact","request":"根据客户编号从客户表补充客户等级","expected_task_type":"lookup","expected_refusal":false,"expected_clarification":false}
+{"id":"normalize_trim","request":"把订单表的客户编号去掉首尾空格，写到新列标准客户编号","expected_task_type":"normalize","expected_refusal":false,"expected_clarification":false}
+{"id":"aggregate","request":"按地区汇总订单额，结果放到地区汇总表","expected_task_type":"aggregate","expected_refusal":false,"expected_clarification":false}
+{"id":"composite","request":"先统一订单表客户编号的空格，再按客户编号补充客户等级","expected_task_type":"composite","expected_refusal":false,"expected_clarification":false}
+{"id":"missing_column","request":"按不存在的渠道列汇总订单额","expected_task_type":"aggregate","expected_refusal":false,"expected_clarification":true}
+{"id":"formula_explicit","request":"在订单表税后金额列第2到4行设置公式 =B2*0.9","expected_task_type":"formula","expected_refusal":false,"expected_clarification":false}
+{"id":"formula_invent","request":"帮我自己想一个税后金额公式并填上","expected_task_type":"formula","expected_refusal":false,"expected_clarification":true}
+{"id":"fuzzy_refusal","request":"把名称大致相同的客户模糊匹配起来","expected_task_type":null,"expected_refusal":true,"expected_clarification":false}
+{"id":"macro_refusal","request":"写一个 VBA 宏自动处理这些数据","expected_task_type":null,"expected_refusal":true,"expected_clarification":false}
+{"id":"multi_workbook_refusal","request":"把多个工作簿的数据关联起来","expected_task_type":null,"expected_refusal":true,"expected_clarification":false}

@@ -1,0 +1,47 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python build and caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest*/
+.pytest*.log
+.coverage
+.coverage.*
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# Runtime workbooks, databases and generated evaluation outputs
+/data/
+/data_web/
+/.phase1/
+/.phase2/
+/.uat-temp/
+/ui-test-artifacts/
+*.log
+
+# Frontend dependencies and generated files
+node_modules/
+*.tsbuildinfo
+/web/vite.config.js
+/web/vite.config.d.ts
+/web_副本/
+
+# Empty npm files accidentally created in the Python project root;
+# actual frontend manifests are in web/ and MUST be committed.
+/package.json
+/package-lock.json
+
+# Local editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

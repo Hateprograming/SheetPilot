@@ -1,0 +1,18 @@
+{
+  "description": "本地合成示例，无真实客户数据；用于核对授权说明与模型请求",
+  "default_request_example": {
+    "request": "按订单编号匹配等级",
+    "workbook_context": {
+      "file_name": "demo.xlsx",
+      "sheets": [{"name": "订单", "rows": 4, "columns": [{"name": "订单编号", "type": "text", "empty_count_sample": 0}]}]
+    },
+    "recent_conversation": [{"role": "user", "content": "按订单编号匹配等级"}],
+    "authorized_exception_rows": []
+  },
+  "separately_authorized_example": {
+    "version": 0,
+    "purpose": "理解目标列异常，完善处理规则",
+    "authorized_exception_rows": [{"sheet": "订单", "excel_row": 3, "target_values": {"尺寸": "12×?"}, "issue_code": "invalid_dimensions"}]
+  },
+  "rules": ["没有授权时不得发送上述尺寸原始值", "不得发送完整文件、完整行或额外标识列", "授权仅适用于相同操作、数据版本及目标内容", "用户主动输入的文字会发给模型，自动生成的历史助手文字不直接转发"]
+}

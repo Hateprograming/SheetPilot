@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sheetpilot"
+version = "2.1.0"
+description = "A skill-driven, transactional spreadsheet agent"
+requires-python = ">=3.12"
+dependencies = [
+  "httpx>=0.27",
+  "langgraph>=0.3",
+  "langgraph-checkpoint-sqlite>=2.0",
+  "openpyxl>=3.1",
+  "pandas>=2.2",
+  "pydantic>=2.9",
+  "streamlit>=1.42",
+  "fastapi>=0.115,<0.116",
+  "uvicorn[standard]>=0.34,<0.35",
+  "python-multipart>=0.0.20",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.3"]
+
+[project.scripts]
+sheetpilot = "sheetpilot.cli:main"
+sheetpilot-web = "sheetpilot.web_api:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

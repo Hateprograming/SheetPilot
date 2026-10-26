@@ -1,0 +1,32 @@
+# Credentials and local state
+.env
+.env.*
+!.env.example
+.git
+.venv
+venv
+data
+data_web
+.phase1
+.phase2
+.uat-temp
+.pytest*
+ui-test-artifacts
+
+# Generated dependencies and build outputs
+**/__pycache__
+**/*.pyc
+**/*.egg-info
+**/node_modules
+**/*.tsbuildinfo
+web/dist
+web/vite.config.js
+web/vite.config.d.ts
+web_副本
+build
+dist
+*.log
+
+# Local tooling
+.vscode
+.idea
